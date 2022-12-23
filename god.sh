@@ -8,5 +8,5 @@ then
     bash ./scripts/commit.sh
 elif [ $1 = "branch" ]
 then 
-    bash ./scripts/branch.sh
-fi
+    bash ./scripts/branch.sh $2
+fi 

@@ -1,42 +1,43 @@
 #!/bin/bash
 
-# Check if the user provided the correct command line argument
-if [ "$1" != "dev" ] && [ "$1" != "main" ]
+# Check if the user provided a branch name as an argument
+if [ -z "$1" ]
 then
-    echo "Error: Please provide either 'dev' or 'main' as the command line argument."
+    echo "Please provide a branch name as an argument."
     exit 1
 fi
 
-# Check if there are any unstaged changes
-if ! git diff-index --quiet HEAD --
+# Store the current branch name in a variable
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Check if the specified branch exists
+if git rev-parse --verify "$1" >/dev/null 2>&1
 then
-    read -p "You have unstaged changes. Do you want to stash them before updating the branch? [y/n] " stash
-    if [ "$stash" = "y" ]
+    # Switch to the specified branch
+    git checkout "$1"
+else
+    # Prompt the user to create the branch
+    read -p "Branch '$1' does not exist. Create it? [Y/n] " create_branch
+
+    # Check if the user wants to create the branch
+    if [[ "$create_branch" =~ ^([yY][eE][sS]|[yY])+$ ]]
     then
-        git stash
+        # Create the branch and switch to it
+        git checkout -b "$1"
+
+        # Prompt the user to push the branch to the remote repository
+        read -p "Do you want to push this branch to the remote repository? [Y/n] " push_branch
+
+        # Check if the user wants to push the branch
+        if [[ "$push_branch" =~ ^([yY][eE][sS]|[yY])+$ ]]
+        then
+            # Push the branch to the remote repository
+            git push -u origin "$1"
+        fi
+    else
+        exit 1
     fi
 fi
 
-# Update the branch
-current_branch=$(git branch | grep \* | cut -d ' ' -f2)
-if [ "$1" = "dev" ]
-then
-    git fetch origin Dev-Branch
-    git rebase origin/Dev-Branch
-elif [ "$1" = "main" ]
-then
-    git fetch origin master
-    git rebase origin/master
-fi
-
-# Check if the user wants to apply their stash
-if [ "$stash" = "y" ]
-then
-    read -p "Do you want to apply your stash to the current branch? [y/n] " apply_stash
-    if [ "$apply_stash" = "y" ]
-    then
-        git stash apply
-    fi
-fi
-
-echo "Successfully updated branch '$current_branch' from '$1'"
+# Inform the user of the current branch
+echo "You are now on branch '$1'."
