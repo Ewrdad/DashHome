@@ -94,3 +94,18 @@
     display: inline-block;
     padding: 0px;
   }
+
+  .actionNeeded {
+    background-color: rgba(218, 56, 24, 0.962);
+    color: black;
+    height: 2vw;
+    width: 100%;
+    font-size: 1vw;
+    text-align: left;
+    
+
+  }
+  .anBlock {
+    display: inline;
+    padding: 4px; 
+  }

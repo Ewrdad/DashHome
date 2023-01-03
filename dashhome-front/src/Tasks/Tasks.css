@@ -1,0 +1,26 @@
+.table {
+    background-color: rgba(86, 76, 74, 0.6);
+    font-size: 1.4vw;
+    width: 80%;
+    height: 2vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 0.1vw;
+    border-style: solid;
+    border-collapse: collapse;
+}
+
+.centraliseTab{
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    width: 100%;
+    
+}
+td {
+    border: 0.1vw;
+    border-style: solid;
+    
+}
+

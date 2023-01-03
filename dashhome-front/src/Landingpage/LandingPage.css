@@ -1,0 +1,26 @@
+.News {
+    width: 30%;
+    background-color: black;
+    height: 40vw;
+    margin: 2vw;
+    display: inline-flex;
+}
+.Links {
+    display: inline-flex;
+    width:60%;
+}
+.logo { 
+    height: 7vw;
+    width: 7vw;
+    margin: 1vw;
+    margin-bottom: 0.5vw;
+    
+}
+.catagoryHeader {
+    display: inline-block;
+}
+.button {
+    width: 7vw;
+    height: 2vw;
+    margin-top: -1vw;
+}
