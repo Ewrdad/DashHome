@@ -1,0 +1,96 @@
+.alerts {
+    text-align: left;
+    vertical-align: bottom;
+    align-items: bottom;
+    padding-left: 0.4vw;
+
+    font-size: 1.5vw;
+    
+}
+.HeadBackground{
+    background-image: url('./static/a.png');
+  
+}
+.headItem{
+    background-color:rgba(86, 76, 74, 0.6);
+    color: white;
+    display: inline-flex;
+    width: 50%;
+    height: 8vw;
+    font-size: 1.5vw;
+    vertical-align: top;
+    padding: 0%;
+    border: 0%;
+    margin: 0%;
+}
+
+.Reminder-box {
+    text-align: left;
+    vertical-align: top;
+    
+    width: 100%;
+    height: 100%;
+    
+}
+.NavWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: right;
+    width: 100%;
+    height:100%;
+  }
+ .Remind{
+    padding: 0%;
+    border: 0%;
+    margin: 0%;
+    text-align: top;
+    font-size: 2vw;
+    color: white;
+}
+
+.RemindSmall{
+    text-align: top;
+    font-size: 1vw;
+    color: white;
+    display: inline-block;
+
+}
+  .NavSpace{
+    height:50%;
+    margin: 0%;
+}
+  
+  .NavLink {
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right:14vw;
+    height: 50%;
+    width: 10vw;
+    border: 0.3vw;
+    border-color: white;
+    border-style: solid;
+   
+  }
+  
+  .Emergency {
+    background-color: red;
+    display: inline-block;
+    padding: 0px;
+  }
+  .Warning{
+    background-color: yellow;
+    display: inline-block;
+    padding: 0px;
+  }
+  .Info{
+    background-color: Blue;
+    display: inline-block;
+    padding: 0px;
+  }

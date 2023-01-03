@@ -9,4 +9,7 @@ then
 elif [ $1 = "branch" ]
 then 
     bash ./scripts/branch.sh $2
+elif [ $1 = "help" ]
+then
+    'source ./pyenv/bin/activate'
 fi 

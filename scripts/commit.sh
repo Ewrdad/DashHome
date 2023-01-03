@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Check if the user is on the correct branch
 current_branch=$(git branch | grep \* | cut -d ' ' -f2)
 read -p "You are currently on branch $current_branch. Is this the correct branch? [y/n] " confirm
